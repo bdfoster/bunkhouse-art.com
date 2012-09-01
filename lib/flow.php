@@ -185,7 +185,7 @@ class Flow {
 	
 	public function display_alert($variable = 'error') {
 		if (isset($this->vars[$variable])) {
-			return "<div class='alert alert=" . $variable . "'><a class='close' data-dismiss='alert'>x</a>" . $this->vars[$variable] . "</div>";
+			return "<div class='alert alert=" . $variable . "'><a class='close' href='#' data-dismiss='alert'>&times;</a>" . $this->vars[$variable] . "</div>";
 		}
 	}
 }

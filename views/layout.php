@@ -10,10 +10,10 @@
     <link href="<?php echo $this->make_route('/css/master.css'); ?>" rel="stylesheet" type="css"/>
     <link href="<?php echo $this->make_route('/css/bootstrap-responsive.min.css'); ?>" rel="stylesheet" type="css"/>
 
-    <!-- IE 6-8 Support of HTML 5 Elements -->
     <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
   </head>
   <body>
     
