@@ -3,12 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Art by Janet Foster · Bunkhouse-Art.com</title>
-    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
 
     <!-- Stylesheets/CSS -->
-    <link href="<?php echo $this->make_route('/css/bootstrap.min.css'); ?>" rel="stylesheet" type="css"/>
-    <link href="<?php echo $this->make_route('/css/master.css'); ?>" rel="stylesheet" type="css"/>
-    <link href="<?php echo $this->make_route('/css/bootstrap-responsive.min.css'); ?>" rel="stylesheet" type="css"/>
+    <link href="<?php echo $this->make_route('/css/bootstrap.min.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo $this->make_route('/css/master.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo $this->make_route('/css/bootstrap-responsive.min.css'); ?>" rel="stylesheet" type="text/css"/>
 
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -18,12 +21,12 @@
   <body>
     
     <!-- Header -->
-    <div class="container">
+    <div class="container-fluid">
       <?php include(ROOT . '/views/header.php'); ?>
     </div>
     
     <!-- Content -->
-    <div class="container">
+    <div class="container-fluid">
       <!-- Alerts -->
       <?php echo $this->display_alert('error'); ?>
       <?php echo $this->display_alert('success'); ?>
@@ -31,7 +34,7 @@
     </div>
     
     <!-- Footer -->
-    <div class="container">
+    <div class="container-fluid">
       <?php include(ROOT . '/views/footer.php'); ?>
     </div>
     
@@ -47,7 +50,7 @@
     <script type="text/javascript" src="<?php echo $this->make_route('/js/bootstrap-tooltip.js'); ?>"></script>
     <script type="text/javascript" src="<?php echo $this->make_route('/js/bootstrap-tab.js'); ?>"></script>
     <script type="text/javascript" src="<?php echo $this->make_route('/js/bootstrap-collapse.js'); ?>"></script>
-    
+    <script type="text/javascript" src="<?php echo $this->make_route('/js/master.js'); ?>"></script>
   </body>
 
 </html>

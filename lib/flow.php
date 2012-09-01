@@ -183,7 +183,7 @@ class Flow {
 		return $this->route_variables[$key];
 	}
 	
-	public function display_alert($variable = 'error') {
+	public function display_alert($variable) {
 		if (isset($this->vars[$variable])) {
 			return "<div class='alert alert=" . $variable . "'><a class='close' href='#' data-dismiss='alert'>&times;</a>" . $this->vars[$variable] . "</div>";
 		}
