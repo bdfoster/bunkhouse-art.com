@@ -22,8 +22,6 @@ post('/site-ready-notification', function($app) {
 			$app->render('home');
 			exit;
 		}
-		$flow->error500($e);
-		exit;
 	}
 	$app->set('success', 'Thanks ' . $app->form('first_name') . ', we\'ll let you know when we\'re ready!');
 	$app->render('home');
