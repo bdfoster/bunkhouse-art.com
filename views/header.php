@@ -8,8 +8,15 @@
         <span class="icon-bar"></span>
       </button>
       <div class="nav-collapse collapse">
-        <ul class="nav">
+        <ul class="nav pull-left">
           <li><a href="<?php echo $this->make_route('/'); ?>">Home</a></li>
+        </ul>
+        <ul class="nav pull-right">
+          <?php if (User::is_authenticated()) { ?>
+          <li><a href="<?php echo $this->make_route('/logout'); ?>">Logout</a></li>
+          <?php } else { ?>
+          <li><a href="<?php echo $this->make_route('/login'); ?>">Login</a></li>
+          <?php } ?>
         </ul>
       </div>
     </div>

@@ -8,7 +8,7 @@ require_once ROOT . '/lib/sag/src/Sag.php';
 require_once ROOT . '/lib/bootstrap.php';
 
 function __autoload($classname) {
-	include_once(ROOT . "/classes" . strlower($classname) . ".php");
+	include_once(ROOT . "/classes/" . strtolower($classname) . ".php");
 }
 
 function get($route, $callback) {
@@ -192,6 +192,10 @@ class Flow {
 			return "<div class='alert alert-" . $variable . "'><a class='close' href='#' data-dismiss='alert'>&times;</a>" . $this->vars[$variable] . "</div>";
 		}
 	}
+	
+	public function redirect($path = '/') {
+		header('Location: ' . $this->make_route($path));
+	}
     
     public function error404() {
 		$this->render('error/400');
@@ -209,6 +213,14 @@ class Flow {
 		$this->set('exception', $exception);
 		$this->render('error/500');
 		exit;
+	}
+	
+	public function validate_email($email_address) {
+		if (filter_var($email_address, FILTER_VALIDATE_EMAIL)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
 	

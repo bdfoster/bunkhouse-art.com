@@ -44,11 +44,12 @@ class User extends Base {
 		
 		try {
 			$flow->couch->login($this->name, $password, Sag::$AUTH_COOKIE);
+			session_start();
 			$_SESSION['username'] = $flow->couch->getSession()->body->userCtx->name;
 			session_write_close();
 		} catch (SagCouchException $e) {
 			if ($e->getCode() =="401") {
-				$flow->set('error', 'Username and/or Password do not match');
+				$flow->set('error', 'Username and/or Password do not match.');
 				$flow->render('user/login');
 				exit;
 			}
