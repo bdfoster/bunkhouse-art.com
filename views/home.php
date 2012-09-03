@@ -18,7 +18,6 @@
           <?php Bootstrap::make_input('first_name', 'First Name', 'text', 'Johnny'); ?>
           <?php Bootstrap::make_input('last_name', 'Last Name', 'text', 'Appleseed'); ?>
           <?php Bootstrap::make_input('email', 'Email', 'text', 'JApples@example.com'); ?>
-          
           <div class="form-actions">
             <button class="btn btn-large btn-block btn-inverse">Notify Me!</button>
           </div>

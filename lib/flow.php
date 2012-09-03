@@ -1,19 +1,16 @@
 <?php
 
-ini_set('display_errors','On');
-error_reporting(E_ALL | E_STRICT);
+//ini_set('display_errors','On');
+//error_reporting(E_ALL | E_STRICT);
 
 define('ROOT', __DIR__ . '/..');
-
+require_once ROOT . '/lib/sag/src/Sag.php';
 require_once ROOT . '/lib/bootstrap.php';
 
-/* This function is called for each get route that you hav defined in
- * your index.php file. This function is a simple pass-through function
- * that hands off the route and callback to the register function of
- * Flow. Later we added a function for each HTTP method (GET, POST, PUT,
- * DELETE) and filled in the $method variable with the HTTP method we 
- * want to match.
- */
+function __autoload($classname) {
+	include_once(ROOT . "/classes" . strlower($classname) . ".php");
+}
+
 function get($route, $callback) {
 	Flow::register($route, $callback, 'GET');
 }
@@ -30,6 +27,10 @@ function delete($route, $callback) {
 	Flow::register($route, $callback, 'DELETE');
 }
 
+function resolve() {
+	Flow::resolve();
+}
+
 class Flow {
 	private static $instance;
 	public static $route_found = false;
@@ -39,6 +40,7 @@ class Flow {
 	public $vars = array();
 	public $route_segments = array();
 	public $route_variables = array();
+	public $couch;
 	
 	/* The Singleton Pattern allows our class to not just be a simple
 	 * class, but also to be one object. This means that each time we
@@ -57,6 +59,8 @@ class Flow {
 		 $this->route = $this->get_route();
 		 $this->route_segments = explode('/', trim($this->route, '/'));
 		 $this->method = $this->get_method();
+		 $this->couch = new Sag(COUCHDB_HOST, COUCHDB_PORT);
+		 $this->couch->setDatabase(COUCHDB_DEFAULT_DB);
 	 }
 	 
 	 protected function get_route() {
@@ -183,10 +187,28 @@ class Flow {
 		return $this->route_variables[$key];
 	}
 	
-	public function display_alert($variable) {
+	public function display_alert($variable = 'error') {
 		if (isset($this->vars[$variable])) {
-			return "<div class='alert alert=" . $variable . "'><a class='close' href='#' data-dismiss='alert'>&times;</a>" . $this->vars[$variable] . "</div>";
+			return "<div class='alert alert-" . $variable . "'><a class='close' href='#' data-dismiss='alert'>&times;</a>" . $this->vars[$variable] . "</div>";
 		}
+	}
+    
+    public function error404() {
+		$this->render('error/400');
+		exit;
+	}
+	
+	public static function resolve() {
+		if(!static::$route_found) {
+			$flow = static::get_instance();
+			$flow->error404();
+		}
+	}
+
+    public function error500($exception) {
+		$this->set('exception', $exception);
+		$this->render('error/500');
+		exit;
 	}
 }
 	
