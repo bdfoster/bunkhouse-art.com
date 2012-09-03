@@ -60,6 +60,14 @@ get('/logout', function($app) {
 	$app->render('home');
 });
 
+get('/my-account', function($app) {
+	if (User::is_authenticated()) {
+		$app->render('my-account');
+		exit;
+	}
+	$app->render('login');
+});
+
 get('/say/:message', function($app) {
 	$app->set('message', $app->request('message'));
 	$app->render('home');
