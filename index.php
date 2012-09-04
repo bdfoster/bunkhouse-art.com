@@ -14,7 +14,7 @@ post('/site-ready-notification', function($app) {
 		exit;
 	}
 	$post = new stdClass;
-	$app->couch->setDatabase(COUCHDB_DEFAULT_DB . 'newsletters/site-ready-notification');
+	$app->couch->setDatabase('bunkhouse/newsletters/site-ready-notification');
 	$app->couch->login(ADMIN_USER, ADMIN_PASSWORD);
 	$post->_id = $app->form('email');
 	$post->first_name = $app->form('first_name');
@@ -49,7 +49,6 @@ post('/login', function($app) {
 	$user = new User();
 	$user->name = $app->form('username');
 	$user->login($app->form('password'));
-	
 	$app->set('success', 'You are now logged in!');
 	$app->render('home');
 });
@@ -66,6 +65,10 @@ get('/my-account', function($app) {
 		exit;
 	}
 	$app->render('login');
+});
+
+get('/admin', function($app) {
+	$app->render('admin/home', 'admin/layout.php');
 });
 
 get('/say/:message', function($app) {

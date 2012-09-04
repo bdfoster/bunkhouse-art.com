@@ -15,7 +15,7 @@ class User extends Base {
 		
 	}
 	
-	public function signup($username, $password) {
+	public function create_account($username, $password) {
 		
 		$flow = new Flow();
 		$flow->couch->setDatabase('_users');
@@ -53,6 +53,7 @@ class User extends Base {
 				$flow->render('user/login');
 				exit;
 			}
+			$flow->error500();
 		}
 	}
 	
