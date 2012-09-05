@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Administration Panel · Bunkhouse-Art.com</title>
+    <title>Art by Janet Foster · Bunkhouse-Art.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="root" >
+    <meta name="author" content="">
 
 
     <!-- Stylesheets/CSS -->
@@ -22,16 +22,15 @@
     
     <!-- Header -->
     <div class="container-fluid">
-      <?php include(ROOT . '/views/admin/header.php'); ?>
+      <?php include(ROOT . '/views/header.php'); ?>
     </div>
     
-    <!-- Body -->
+    <!-- Content -->
     <div class="container-fluid">
       <!-- Alerts -->
       <?php echo $this->display_alert('error'); ?>
       <?php echo $this->display_alert('success'); ?>
-      <!-- Content -->
-      <?php include($this->content); ?>
+        <?php include($this->content); ?>
     </div>
     
     <!-- Footer -->

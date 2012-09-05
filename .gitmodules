@@ -1,3 +1,6 @@
 [submodule "lib/sag"]
 	path = lib/sag
-	url = git://github.com/sbisbee/sag.git
+	url = http://github.com/sbisbee/sag.git
+[submodule "sag"]
+	path = sag
+	url = http://github.com/sbisbee/sag.git

@@ -68,7 +68,7 @@ get('/my-account', function($app) {
 });
 
 get('/admin', function($app) {
-	$app->render('admin/home', 'admin/layout.php');
+	$app->render('admin/home', 'admin/layout');
 });
 
 get('/say/:message', function($app) {

@@ -7,9 +7,9 @@
         <span class="icon-bar"></span>
       </button>
       <a class="brand" href="<?php echo $this->make_route('/admin/home'); ?>">Administration Panel</a>
+      <div class="page-header">
+        <h1><small>Administration Home</small></h1>
+      </div>
     </div>
   </div>
-</div>
-<div class="page-header">
-  <h1><small>Administration Home</small></h1>
 </div>
