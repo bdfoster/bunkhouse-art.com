@@ -32,7 +32,7 @@
             </button>
             <div class="nav-collapse collapse">
               <ul class="nav pull-left">
-                <?php Bootstrap::make_navbar_button('$this->make_route('/')', 'Home'); ?>
+                <?php Bootstrap::make_navbar_button($this->make_route('/'), 'Home'); ?>
               </ul>
               <ul class="nav pull-right">
                 <?php 
