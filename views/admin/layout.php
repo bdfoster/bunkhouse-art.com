@@ -32,7 +32,14 @@
             <a class="brand" href="<?php echo $this->make_route('/admin/home'); ?>">Administration Panel</a>
               <div class="nav-collapse collapse">
                 <ul class="nav">
-                  <?php Bootstrap::make_navbar_button('#', 'Orders'); ?>
+                   <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Orders</a>
+                    <ul class="dropdown-menu">
+                      <?php Bootstrap::make_navbar_button('#', 'View Pending Orders'); ?>
+                      <?php Bootstrap::make_navbar_button('#', 'Edit Order'); ?>
+                      <?php Bootstrap::make_navbar_button('#', 'Cancel Order'); ?>
+                    </ul>
+                  </li>
                   <?php Bootstrap::make_navbar_button('#', 'Items'); ?>
                   <?php Bootstrap::make_navbar_button('#', 'Groups'); ?>
                   <?php Bootstrap::make_navbar_button('#', 'Settings'); ?>
