@@ -37,10 +37,12 @@
               <ul class="nav pull-right">
                 <?php 
                 if (User::is_authenticated()) {
+                  Bootstrap::make_navbar_button($this->make_route('/admin'), 'Admin Panel');
                   Bootstrap::make_navbar_button($this->make_route('/logout'), 'Logout');
                 } else {
                   Bootstrap::make_navbar_button($this->make_route('/login'), 'Login'); 
-                } ?>
+                }
+                ?>
               </ul>
             </div>
           </div>
