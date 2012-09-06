@@ -7,6 +7,14 @@
         <span class="icon-bar"></span>
       </button>
       <a class="brand" href="<?php echo $this->make_route('/admin/home'); ?>">Administration Panel</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <?php echo Bootstrap::make_navbar_button('#', 'Orders'); ?>
+          <?php echo Bootstrap::make_navbar_button('#', 'Items'); ?>
+          <?php echo Bootstrap::make_navbar_button('#', 'Groups'); ?>
+          <?php echo Bootstrap::make_navbar_button('#', 'Settings'); ?>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
