@@ -38,11 +38,32 @@
                       <?php Bootstrap::make_navbar_button('#', 'View Pending Orders'); ?>
                       <?php Bootstrap::make_navbar_button('#', 'Edit Order'); ?>
                       <?php Bootstrap::make_navbar_button('#', 'Cancel Order'); ?>
-                    </ul>
+                    </ul> 
                   </li>
-                  <?php Bootstrap::make_navbar_button('#', 'Items'); ?>
-                  <?php Bootstrap::make_navbar_button('#', 'Groups'); ?>
-                  <?php Bootstrap::make_navbar_button('#', 'Settings'); ?>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Items</a>
+                    <ul class="dropdown-menu">
+                      <?php Bootstrap::make_navbar_button('#', 'Add Item'); ?>
+                      <?php Bootstrap::make_navbar_button('#', 'Edit Item'); ?>
+                      <?php Bootstrap::make_navbar_button('#', 'Delete Item'); ?>
+                    </ul> 
+                  </li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Groups</a>
+                    <ul class="dropdown-menu">
+                      <?php Bootstrap::make_navbar_button('#', 'Add Group'); ?>
+                      <?php Bootstrap::make_navbar_button('#', 'Edit Group'); ?>
+                      <?php Bootstrap::make_navbar_button('#', 'Delete Group'); ?>
+                    </ul> 
+                  </li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings</a>
+                    <ul class="dropdown-menu">
+                      <?php Bootstrap::make_navbar_button('#', 'Item 1'); ?>
+                      <?php Bootstrap::make_navbar_button('#', 'Item 2'); ?>
+                      <?php Bootstrap::make_navbar_button('#', 'Item 3'); ?>
+                    </ul> 
+                  </li>
                   <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Testing</a>
                     <ul class="dropdown-menu">
