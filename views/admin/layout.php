@@ -32,17 +32,20 @@
             <a class="brand" href="<?php echo $this->make_route('/admin/home'); ?>">Administration Panel</a>
               <div class="nav-collapse collapse">
                 <ul class="nav">
-                  <?php echo Bootstrap::make_navbar_button('#', 'Orders'); ?>
-                  <?php echo Bootstrap::make_navbar_button('#', 'Items'); ?>
-                  <?php echo Bootstrap::make_navbar_button('#', 'Groups'); ?>
-                  <?php echo Bootstrap::make_navbar_button('#', 'Settings'); ?>
+                  <?php Bootstrap::make_navbar_button('#', 'Orders'); ?>
+                  <?php Bootstrap::make_navbar_button('#', 'Items'); ?>
+                  <?php Bootstrap::make_navbar_button('#', 'Groups'); ?>
+                  <?php Bootstrap::make_navbar_button('#', 'Settings'); ?>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Testing</a>
+                    <ul class="dropdown-menu">
+                      <?php Bootstrap::make_navbar_button($this->make_route('/admin/render-samples'), 'Render Samples'); ?>
+                    </ul>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
-        </div>
-        <div class="page-header">
-          <h1><small>Administration Home</small></h1>
         </div>
       </div>
     </div>
@@ -55,6 +58,7 @@
       
       <!-- Content -->
       <?php include($this->content); ?>
+      
     </div>
     
     <!-- Footer -->
@@ -81,6 +85,7 @@
     <?php Bootstrap::add_script($this->make_route('/js/bootstrap-tooltip.js'), 'text/javascript'); ?>
     <?php Bootstrap::add_script($this->make_route('/js/bootstrap-tab.js'), 'text/javascript'); ?>
     <?php Bootstrap::add_script($this->make_route('/js/bootstrap-collapse.js'), 'text/javascript'); ?>
+    <?php Bootstrap::add_script($this->make_route('/js/bootstrap-dropdown.js'), 'text/javascript'); ?>
     <?php Bootstrap::add_script($this->make_route('/js/master.js'), 'text/javascript'); ?>
     
   </body>

@@ -1,3 +1,6 @@
+<div class="page-header">
+  <h1>Administration Home</h1>
+</div>
 <div class="row">
   <div class="span12 pagination-centered">
     <h3>Welcome to the Administration Panel</h3>

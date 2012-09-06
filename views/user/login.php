@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="span4"></div>
-    <div class="span4 pagination-centered">
-      <div class="hero-unit" style="text-align:center">
+    <div class="span4"><br></div>
+    <div class="span4">
+      <div class="hero-unit pagination-centered">
         <h3>Login</h3>
         <form action="<?php echo $this->make_route('/login'); ?>" method="post">
           <fieldset>

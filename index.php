@@ -68,7 +68,20 @@ get('/my-account', function($app) {
 });
 
 get('/admin', function($app) {
-	$app->render('admin/home', 'admin/layout');
+	if (User::is_authenticated()) {
+		$app->render('admin/home', 'admin/layout');
+	} else {
+		$app->redirect('/login');
+	}
+});
+
+get('/admin/render-samples', function($app) {
+	if (User::is_authenticated()) {
+		$app->set('title', 'Render Samples');
+		$app->render('admin/render-samples', 'admin/layout');
+	} else {
+		$app->redirect('/login');
+	}
 });
 
 get('/say/:message', function($app) {
